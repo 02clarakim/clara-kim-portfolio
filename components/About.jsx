@@ -35,7 +35,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="py-[100px] pr-[100px] ml-[150px]">
+    <section id="about" className="py-[100px] md:pr-[100px] md:ml-[150px]">
       {/* text-gray-800 */}
       <h2 className="text-2xl font-semibold mb-[60px] mt-[20px]">
         <span className="bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">About Me

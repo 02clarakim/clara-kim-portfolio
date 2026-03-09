@@ -26,7 +26,7 @@ export function ProjectModal({ project, onClose }) {
 
         <div className="flex gap-8 p-8 max-md:flex-col overflow-y-auto">
           {/* Project Image */}
-          <div className="w-90 flex-shrink-0 flex flex-col gap-4 sticky top-8 self-start max-md:w-full">
+          <div className="w-90 flex-shrink-0 flex flex-col gap-4 md:sticky md:top-8 md:self-start max-md:w-full">
             {project.images ? (
               project.images.map((img, i) => (
                 <img

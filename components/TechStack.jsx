@@ -63,7 +63,7 @@ const TechStack = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-6 gap-1 max-w-2xl mx-auto justify-items-center">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-1 max-w-2xl mx-auto justify-items-center">
         {technologies.map((tech, index) => (
           <TechItem
             key={tech.name}

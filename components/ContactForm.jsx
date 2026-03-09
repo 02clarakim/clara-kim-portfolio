@@ -41,7 +41,7 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="pt-[60px] pb-[100px] ml-[150px]">
+    <section id="contact" className="pt-[60px] pb-[100px] md:ml-[150px]">
       {/* Heading aligned left */}
       <h2 className="text-2xl font-semibold mb-[40px]">
         <span className="bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">Contact Me
