@@ -9,7 +9,7 @@ export function ProjectModal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[1000] p-4"
       onClick={onClose}
     >
       <div
@@ -24,16 +24,23 @@ export function ProjectModal({ project, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex gap-8 p-8 max-md:flex-col overflow-y-auto">
+        <div className="overflow-y-auto">
+        <div className="flex gap-8 p-8 max-lg:flex-col max-md:p-6">
           {/* Project Image */}
-          <div className="w-90 flex-shrink-0 flex flex-col gap-4 md:sticky md:top-8 md:self-start max-md:w-full">
+          <div
+            className={`w-90 flex-shrink-0 gap-4 lg:sticky lg:top-8 lg:self-start max-lg:w-full ${
+              project.imageColumns === 2 ? "grid grid-cols-2 md:max-lg:grid-cols-4 items-start" : "flex flex-col md:max-lg:grid md:max-lg:grid-cols-2"
+            }`}
+          >
             {project.images ? (
               project.images.map((img, i) => (
                 <img
                   key={i}
                   src={img}
                   alt={`${project.title}-${i}`}
-                  className="w-full min-h-[260px] max-h-[280px] rounded-xl object-cover shadow-sm"
+                  className={`w-full rounded-xl shadow-sm ${
+                    project.fitImages ? "h-auto" : "min-h-[260px] max-h-[280px] object-cover"
+                  }`}
                 />
               ))
             ) : project.image ? (
@@ -94,7 +101,7 @@ export function ProjectModal({ project, onClose }) {
 
             {/* Description */}
             {project.description && (
-              <div className="mb-5 flex-1">
+              <div className="mb-5">
                 <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                   Description
                 </h3>
@@ -106,20 +113,20 @@ export function ProjectModal({ project, onClose }) {
 
             {/* For Case Studies */}
             {project.problem && (
-                <div className="mb-5 flex-1">
+                <div className="mb-5">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                     Problem
                   </h3>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {project.problem}
+                  <p className="text-foreground/80 leading-relaxed whitespace-pre-wrap">
+                    {project.problem.trim()}
                   </p>
               </div>
             )}
 
             {project.process && (
-                <div className="mb-5 flex-1">
+                <div className="mb-5">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
-                    Process
+                    {project.processLabel ?? "Process"}
                   </h3>
                   <p className="text-foreground/80 leading-relaxed whitespace-pre-wrap">
                     {project.process}
@@ -128,19 +135,19 @@ export function ProjectModal({ project, onClose }) {
             )}
 
             {project.outcome && (
-                <div className="mb-5 flex-1">
+                <div className="mb-5">
                   <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
                     Outcome
                   </h3>
-                  <p className="text-foreground/80 leading-relaxed">
-                    {project.outcome}
+                  <p className="text-foreground/80 leading-relaxed whitespace-pre-wrap">
+                    {project.outcome.trim()}
                   </p>
               </div>
             )}
             
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-border">
+            <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-border">
               {project.tags.map((tag, index) => (
                 <span
                   key={index}
@@ -151,6 +158,7 @@ export function ProjectModal({ project, onClose }) {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

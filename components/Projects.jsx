@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
+import { ProjectModal } from "@/app/projects/components/ProjectModal";
 
 import { projectsData } from "@/data/projectsData";
 
@@ -21,7 +21,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="ml-4 md:ml-[150px] md:py-[100px] md:pr-[100px]">
+    <section id="projects" className="md:py-[100px]">
       {/* Header */}
       <div className="flex justify-between items-center mb-[30px]">
         <h2 className="text-2xl font-semibold mt-[20px]">
