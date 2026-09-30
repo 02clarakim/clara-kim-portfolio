@@ -6,7 +6,7 @@ function About() {
   const experiences = [
     {
         company: "Globify",
-        role: "Founding Software Engineer",
+        role: "Founding Engineer",
         period: "Feb. 2026 - Present",
         description:
         "Sole engineer building a creator marketplace (React Native, Next.js, Supabase) with Stripe Connect escrow payments for a 300-creator network. Now in TestFlight."
@@ -57,7 +57,7 @@ function About() {
 
           {/* Resume Button at the bottom */}
           <button
-            onClick={() => window.open("/clarakim-resume-uiux.pdf", "_blank")}
+            onClick={() => window.open("/ClaraKim_Resume.pdf", "_blank")}
             className="mt-4 border border-gray-300 text-gray-700 bg-white/60 px-6 py-2 text-md rounded-lg hover:bg-gray-100 hover:text-gray-900 hover:scale-105 transition-all self-start"
           >
             Resume
