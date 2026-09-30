@@ -6,7 +6,7 @@ import { ExternalLink, Github } from 'lucide-react';
 function ProjectCard({ project, onClick }) {
   return (
     <div 
-      className="w-full max-w-4xl bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer overflow-hidden mb-6"
+      className="w-full bg-white/60 backdrop-blur-sm border border-gray-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer overflow-hidden mb-6"
       onClick={onClick}
     >
       <div className="flex gap-6 p-6 max-md:flex-col">

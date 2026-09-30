@@ -41,7 +41,7 @@ function ContactForm() {
   };
 
   return (
-    <section id="contact" className="pt-[60px] pb-[100px] ml-4 md:ml-[150px]">
+    <section id="contact" className="pt-[60px] pb-[100px]">
       {/* Heading aligned left */}
       <h2 className="text-2xl font-semibold mb-[40px]">
         <span className="bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">Contact Me
@@ -49,7 +49,7 @@ function ContactForm() {
       </h2>
       {/* Card centered */}
       <div className="flex justify-left">
-        <div className="w-full max-w-4xl bg-white/70 border border-gray-300 rounded-xl shadow-sm p-8">
+        <div className="w-full bg-white/70 border border-gray-300 rounded-xl shadow-sm p-8">
           <form className="space-y-5" onSubmit={handleSubmit}>
             {/* Name */}
             <div>
