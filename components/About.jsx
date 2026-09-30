@@ -5,11 +5,18 @@ import React from "react";
 function About() {
   const experiences = [
     {
-        company: "Globify", 
-        role: "UIUX Designer / Frontend Developer",
-        period: "Oct. 2025 - Present", 
-        description: 
-        "Designed web and mobile product experiences for a startup, from user flows to prototypes. Led website redesign and launch, grew social presence to 2K+ followers, and presented at CES 2026."
+        company: "Globify",
+        role: "Founding Software Engineer",
+        period: "Feb. 2026 - Present",
+        description:
+        "Sole engineer building a creator marketplace (React Native, Next.js, Supabase) with Stripe Connect escrow payments for a 300-creator network. Now in TestFlight."
+    },
+    {
+      company: "Honda Research Institute (99P Labs)",
+      role: "AI Engineer Intern",
+      period: "Jan. 2026 - May 2026",
+      description:
+        "Built a multi-agent LLM research pipeline (LangGraph, GPT-4o) with an evaluation system that makes prompt changes measurable: Elo-ranked scoring plus LLM-as-judge A/B benchmarks.",
     },
     // {
     //   company: "Evernix",
@@ -19,39 +26,32 @@ function About() {
     //     "Built MVP for AI investment agents, creating beginner-friendly rationales and advanced reports, iterating product and business model for B2C users.",
     // },
     {
-      company: "ZEP",
-      role: "Software Engineer (Contract)",
+      company: "Naver Z (ZEP Quiz)",
+      role: "Software Engineer Intern",
       period: "Aug. 2025 - Dec. 2025",
       description:
-        "Automated video creation using Python, AI-generated quizzes, and Figma designs, publishing content via n8n and Coolify.",
-    },
-    {
-      company: "Fasoo",
-      role: "Software Developer Intern",
-      period: "Jun. 2025 - Aug. 2025",
-      description:
-        "Created a reusable Flutter UI component library, collaborating with designers and engineers to improve consistency and scalability across platforms.",
+        "Automated quiz generation (~900/day) with n8n and GPT-4o, adding an evaluation stage that auto-publishes the best quizzes as YouTube Shorts.",
     },
   ];
 
   return (
-    <section id="about" className="py-[100px] pr-4 ml-4 md:pr-[100px] md:ml-[150px]">
+    <section id="about" className="py-[100px]">
       {/* text-gray-800 */}
       <h2 className="text-2xl font-semibold mb-[60px] mt-[20px]">
         <span className="bg-gradient-to-r from-red-400 to-purple-600 bg-clip-text text-transparent">About Me
           </span>
       </h2>
 
-      <div className="flex gap-[50px] relative max-md:flex-col">
+      <div className="flex gap-[50px] relative max-lg:flex-col">
         {/* Bio Section */}
-        <div className="flex-1 max-w-[350px] text-base font-normal text-gray-800 max-md:max-w-full flex flex-col justify-between">
+        <div className="flex-[2] text-base font-normal text-gray-800 flex flex-col justify-between">
           <div>
             <p className="mb-5">
-              I&apos;m a <strong>Computer Science</strong> and <strong>Cognitive Science</strong> double major at <strong>UC Berkeley</strong>, passionate about turning ideas into human-centered experiences. I enjoy exploring how <strong>design and technology intersect</strong> to create products that are intuitive, cohesive, and impactful.
+              I&apos;m a software engineer and recent <strong>UC Berkeley</strong> graduate in <strong>Computer Science</strong> and <strong>Cognitive Science</strong>. I like owning products from the first sketch to production: talking to users, designing the flow, building the system, and shipping it.
             </p>
 
             <p className="mb-5">
-              Whether refining UI details or rethinking user flows, I focus on building products that delight users. Outside of code, I enjoy sketching ideas, experimenting with new tools, and learning how small design choices can make a big difference.
+              Cognitive science taught me to start with people: how they think, what confuses them, and what makes them come back. I bring that to engineering, whether I&apos;m designing a data model or refining a UI detail. I want to build things people actually enjoy using.
             </p>
           </div>
 
@@ -65,10 +65,10 @@ function About() {
         </div>
 
         {/* Divider */}
-        <div className="w-0 h-auto border-l border-gray-800 max-md:hidden"></div>
+        <div className="w-0 h-auto border-l border-gray-800 max-lg:hidden"></div>
 
         {/* Experience Section */}
-        <div className="flex-1 max-w-[500px] text-base text-gray-800 max-md:max-w-full">
+        <div className="flex-[3] text-base text-gray-800">
           <h3 className="text-lg font-bold mb-6">Experience</h3>
           <div className="flex flex-col gap-6">
             {experiences.map((exp, idx) => (
