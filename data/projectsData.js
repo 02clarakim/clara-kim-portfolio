@@ -11,7 +11,12 @@ export const techStackOptions = [
   'React',
   'Next.js',
   'Node.js',
+  'React Native',
+  'PostgreSQL',
+  'Redis',
   'TensorFlow',
+  'OpenAI API',
+  'LangGraph',
   'Figma',
   'HTML/CSS',
   'AI',
@@ -20,15 +25,44 @@ export const techStackOptions = [
 
 export const projectsData = [
   {
-    id: 1, 
-    title: "Globify - Beautyin Product", 
-    overview: "Designed and built the web interface for an AI voice review platform enabling beauty brands to gather customer insights through voice-based surveys.",
-    description: `Led product design and frontend development for Voix (Beautyin), focusing on business-facing workflows for collecting and managing customer feedback. Designed survey interaction flows, product management pages, and an admin dashboard that allows brands to review voice-generated insights and manage survey campaigns. Built responsive interfaces and structured the frontend architecture to support scalable expansion to consumer-facing features currently in development. The platform was presented as part of the company’s product showcase at CES 2026.`,
+    id: 11,
+    title: "MatchThread: Live Football Feed",
+    overview: "Real-time football feed that cross-verifies Reddit goal posts against ESPN data, streamed live over WebSockets with LLM commentary.",
+    description: `Built a real-time aggregator that merges live match events, LLM-generated commentary, and community clips into one verified feed. Designed a three-stage matching engine that cross-checks Reddit posts against ESPN match data by scorer, minute, and scoreline, blocking false goal posts before they're published. Streamed events through a custom WebSocket gateway backed by an idempotent ingestion pipeline. Consolidated four processes into a single deployable unit with an optional Redis cache/pub-sub layer, cutting hosting costs from ~$28 to $0–7/month with no functional regression. Deployed on Render and Neon Postgres.`,
     category: "swe",
-    tags: ["Figma", "Next.js", "Typescript"],
-    demoLink: "https://beautyin.site",
-    image: "/assets/images/voix-landing.png",
-    images: ["/assets/images/voix-landing.png", "/assets/images/voix-surveys.png"],    
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "WebSockets", "OpenAI API"],
+    demoLink: "https://matchthread.onrender.com",
+    githubLink: "https://github.com/02clarakim/matchthread",
+    image: "/assets/images/matchthread/matchthread-example.png",
+    images: ["/assets/images/matchthread/matchthread-example.png", "/assets/images/matchthread/matchthread-profile.png"],
+    fitImages: true,
+  },
+  {
+    id: 1,
+    title: "Campus Creator Hub · Globify",
+    overview: "Sole engineer: React Native (Expo) iOS app + Next.js admin console + Supabase/Postgres backend, with Stripe Connect escrow payments. Replaced a manual Discord/WhatsApp/Google Sheets workflow for a 300-creator network.",
+    problem: `• No system to source, vet, or manage 300+ creators across concurrent brand campaigns
+• Brand spend and creator payouts tracked by hand — not auditable, easy to lose
+• Staff needed scoped roles (admin / manager / brand) that don't require manual setup per brand`,
+    process: `Discover → Apply → Deliver → Review → Get Paid
+
+Creator app
+  • Lifecycle-based, collapsible sections (Available → In Review → Accepted → Previous), reused across Events and Deliverables
+  • Search added to Match, Community, and Events at scale
+  • Token-based light/dark theming system unifying 35 screens and 33 shared components
+
+Admin console
+  • Auto-scoped brand access by campaign/event ownership — no manual per-campaign assignment
+  • Grouped-by-brand, searchable, live/closed views across Campaigns, Applications, Deliverables, Events
+  • Escrow-style payout flow on Stripe Connect + Checkout: brands fund campaigns → staff approve deliverables → creators get paid, so every payout is traceable and all spend auditable`,
+    outcome: `• One source of truth across both products: creator status, payout eligibility, and brand funding all derive from the same state
+• Currently in TestFlight, ahead of App Store launch`,
+    category: "swe",
+    tags: ["React Native", "Next.js", "TypeScript", "PostgreSQL", "Supabase", "Stripe"],
+    image: "/assets/images/globify/cch-cover.jpg",
+    images: ["/assets/images/globify/cch-home.png", "/assets/images/globify/cch-match.png", "/assets/images/globify/cch-events.png", "/assets/images/globify/cch-chat.png"],
+    fitImages: true,
+    imageColumns: 2,
   },
   // {
   //   id: 1,
@@ -55,6 +89,26 @@ export const projectsData = [
     githubLink: "https://github.com/02clarakim/ai_classrec",
     image: "/assets/images/airec-landing.png",
     images: ["/assets/images/airec-landing.png", "/assets/images/airec-result.png"]
+  },
+  {
+    id: 12,
+    title: "AURA: Multi-Agent Research Pipeline",
+    overview: "Multi-agent LangGraph pipeline generating evidence-cited innovation strategies, with an LLM-as-judge harness for prompt A/B testing.",
+    description: `Built a multi-agent LLM pipeline at Honda Research Institute's 99P Labs (LangGraph, TypeScript, GPT-4o) that produces structured, evidence-cited innovation strategies for eVTOL and robotaxi domains, presented to 99P Labs researchers. Designed a two-layer evaluation system to make prompt changes measurable: a 7-axis weighted scoring loop with Elo ranking inside the pipeline, plus an A/B benchmark harness scoring prompt variants against 5 LLM-as-judge rubrics. Kept results reliable under LLM failures by scoring failed evaluations as 0 and tracing every scoring decision in Langfuse.`,
+    category: "swe",
+    processLabel: "How it works",
+    process: `1. Enter topic → describe a research question
+2. Clarify scope → answer 3–5 AI-generated questions
+3. Set priorities → weight each answer from 1–5
+4. Review queries → edit and refine generated search queries
+5. Run research → agents search 50+ sources (web + arXiv), then generate, score, debate, and evolve hypotheses over 2 rounds
+6. View report → read the synthesized, evidence-cited report
+7. Chat → ask follow-up questions with MCP tools`,
+    tags: ["LangGraph", "TypeScript", "OpenAI API", "Langfuse"],
+    demoLink: "https://likelion-aura.vercel.app/",
+    image: "/assets/images/aura/aura-architecture.png",
+    images: ["/assets/images/aura/aura-architecture.png", "/assets/images/aura/aura-clarify.png", "/assets/images/aura/aura-result.png"],
+    fitImages: true,
   },
   {
     id: 3,
@@ -92,13 +146,11 @@ Iterated on navigation and screen hierarchy to simplify the main workflow: selec
   },
   {
     id: 2,
-    title: "ZEP Video Creation & Automation",
-    overview: "Built an automated pipeline to AI-generate quizzes and learning videos, enabling global reach and scaling content creation for educators.",
-    description: `
-Developed Python scripts to generate quizzes and convert them into short educational videos for YouTube and social media, helping educators scale content production beyond Korea/Asia. Used n8n for workflow automation and Coolify for hosting, enabling seamless deployment of content pipelines. Designed AI prompts to produce quiz questions and explanations automatically, while validating results for accuracy and engagement. Enhanced the platform's reach and efficiency, reducing hours of manual work while maintaining user-focused learning quality.
-    `,
+    title: "ZEP Quiz → YouTube Shorts Pipeline",
+    overview: "Automated pipeline generating ~900 trend-based quizzes a day with GPT-4o and auto-publishing the best as YouTube Shorts.",
+    description: `Built an n8n pipeline for Naver Z's ZEP Quiz that pulls trending keywords from SerpApi every 4 hours and uses GPT-4o to generate 10 quizzes per keyword, about 900 questions a day. Added an evaluation stage that filters out weak quizzes and auto-publishes passing ones as YouTube Shorts, taking content from generation to publication without manual steps. Also designed the Shorts video layout.`,
     category: "swe",
-    tags: ["Python", "Figma"],
+    tags: ["Python", "n8n", "OpenAI API", "Figma"],
     githubLink: "https://github.com/98sean/likelion-zep-video-generation",
     image: "/assets/images/zep-youtube-img.png"
   },
