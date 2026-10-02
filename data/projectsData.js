@@ -56,7 +56,7 @@ Admin console
   • Grouped-by-brand, searchable, live/closed views across Campaigns, Applications, Deliverables, Events
   • Escrow-style payout flow on Stripe Connect + Checkout: brands fund campaigns → staff approve deliverables → creators get paid, so every payout is traceable and all spend auditable`,
     outcome: `• One source of truth across both products: creator status, payout eligibility, and brand funding all derive from the same state
-• Currently in TestFlight, ahead of App Store launch`,
+• Submitted for App Store review after TestFlight beta testing`,
     category: "swe",
     tags: ["React Native", "Next.js", "TypeScript", "PostgreSQL", "Supabase", "Stripe"],
     image: "/assets/images/globify/cch-cover.jpg",

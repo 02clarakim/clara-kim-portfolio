@@ -9,12 +9,12 @@ function About() {
         role: "Founding Engineer",
         period: "Feb. 2026 - Present",
         description:
-        "Sole engineer building a creator marketplace (React Native, Next.js, Supabase) with Stripe Connect escrow payments for a 300-creator network. Now in TestFlight."
+        "Sole engineer building a creator marketplace (React Native, Next.js, Supabase) with Stripe Connect escrow payments for a 300-creator network. Now in App Store review."
     },
     {
       company: "Honda Research Institute (99P Labs)",
       role: "AI Engineer Intern",
-      period: "Jan. 2026 - May 2026",
+      period: "Feb. 2026 - May 2026",
       description:
         "Built a multi-agent LLM research pipeline (LangGraph, GPT-4o) with an evaluation system that makes prompt changes measurable: Elo-ranked scoring plus LLM-as-judge A/B benchmarks.",
     },
@@ -28,7 +28,7 @@ function About() {
     {
       company: "Naver Z (ZEP Quiz)",
       role: "Software Engineer Intern",
-      period: "Aug. 2025 - Dec. 2025",
+      period: "Sep. 2025 - Dec. 2025",
       description:
         "Automated quiz generation (~900/day) with n8n and GPT-4o, adding an evaluation stage that auto-publishes the best quizzes as YouTube Shorts.",
     },
